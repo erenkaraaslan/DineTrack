@@ -24,8 +24,8 @@ class About extends React.Component {
   }
 }
 
-Index.propTypes = {
+About.propTypes = {
   url: PropTypes.string.isRequired,
 };
 
-export default Index;
+export default About;
