@@ -1,16 +1,29 @@
-    <!-- copied from part 1 -->
-    <!DOCTYPE html>
-    <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <title>dinetrack</title>
         <meta charset="UTF-8">
     </head>
 
     <body>
+        <!-- How to initialize react entry for main.jsx
         <div id="reactEntry">
             Loading ...
         </div>
-        <!-- Load JavaScript -->
-        <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>-->
+        <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo">
+        <div class="login">
+            <p>Login</p>
+            <form action="" method="post">
+                <input type="text" placeholder="Username" name="username">
+                <input type="text" placeholder="Password" name="password">
+                <input type="submit" value="Login">
+            </form>
+            <p>Don't have a DineTrack account? <a href="/accounts/create/">Sign up</a></p>
+        </div>
+        <footer>
+            <p>EECS 493 Fall 2020 Final Project</p>
+            <p>Created by: Eren Karaaslan, Teamate, Teamate, Teamate</p>
+        </footer>
     </body>
 </html>
