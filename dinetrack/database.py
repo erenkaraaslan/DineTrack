@@ -1,9 +1,8 @@
 import sqlite3
 import dinetrack
-import config
 from flask import g
 
-DATABASE = config.DATABASE_FILENAME
+DATABASE = dinetrack.app.config['DATABASE_FILENAME']
 
 def get_db():
 	db = getattr(g, '_database', None)
