@@ -17,12 +17,31 @@ def show_index():
 		query = "SELECT password FROM users WHERE username = '{}';".format(username)
 		cur = cur.execute(query);
 		db_password = cur.fetchall()[0][0]
-		if password == db_password:
-			session['username'] = username
-			print('User logged in!')
-			#Load some other page to show
-		#Verify user against DB
+		if not db_password:
+			flask.abort(403)
+		if not password == db_password:
+			flask.abort(403)
+		session['username'] = username
+		print('User logged in!')
+		return flask.redirect(flask.url_for('show_home'))
+		#Load some other page to show
 	return flask.render_template("index.html")
+
+@dinetrack.app.route('/home/')
+def show_home():
+	return flask.render_template("home.html", username=session['username'])
+
+@dinetrack.app.route('/about/')
+def show_about():
+	return flask.render_template("about.html", username=session['username'])
+
+@dinetrack.app.route('/tip/')
+def show_tip():
+	return flask.render_template("tip.html", username=session['username'])
+
+@dinetrack.app.route('/stats/')
+def show_stats():
+	return flask.render_template("stats.html")
 
 @dinetrack.app.route('/accounts/create/', methods=['POST', 'GET'])
 def account_create():
@@ -38,11 +57,11 @@ def account_create():
 		db.commit()
 		#Set the flask session details
 		session['username'] = inputs['username']
-		return flask.redirect(flask.url_for("show_index"))
+		return flask.redirect(flask.url_for("show_home"))
 	return flask.render_template("create.html")
 
 #Call this url for any logout link
-@dinetrack.app.route('/accounts/logout', methods=['POST', 'GET'])
+@dinetrack.app.route('/accounts/logout/', methods=['POST', 'GET'])
 def logout():
 	#Clear the flask session
 	session.clear()
