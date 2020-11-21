@@ -18,26 +18,45 @@
         </div>
         <div class="tip">
             <p>Tip Tool</p>
-            <form action="" method="post">
+            <form id="tipForm">
                 <div>
-                    <input type="text" placeholder="Name" name="name">
-                    <input type="text" placeholder="Amount" name="amount">
+                    <input type="text" placeholder="Name" name="name1">
+                    <input type="text" placeholder="Amount" name="amount1">
                 </div>
                 <div>
-                    <input type="text" placeholder="Name" name="name">
-                    <input type="text" placeholder="Amount" name="amount">
+                    <input type="text" placeholder="Name" name="name2">
+                    <input type="text" placeholder="Amount" name="amount2">
                 </div>
                 <div>
-                    <input type="text" placeholder="Name" name="name">
-                    <input type="text" placeholder="Amount" name="amount">
+                    <input type="text" placeholder="Name" name="name3">
+                    <input type="text" placeholder="Amount" name="amount3">
                 </div>
+                <input type="text" placeholder="Tip %" name="percent">
                 <div>
                     <button> + </button>
                 </div>
-                <input type="submit" value="calculate">
+                <button onclick="store()">Calculate</button>
             </form>
-
+            <script type="text/javascript">
+                let users = []
+                function user(name, amount) {
+                    this.name = name;
+                    this.amount = amount;
+                }
+                function store() {
+                    let tipForm = document.getElementById("tipForm");
+                    let name1 = tipForm[0].value;
+                    let value1 = tipForm[1].value;
+                    let name2 = tipForm[2].value;
+                    let value2 = tipForm[3].value;
+                    let name3 = tipForm[4].value;
+                    let value3 = tipForm[5].value;
+                    let percent = tipForm[6].value/100.0;
+                    alert(name1 + " tip: " + value1*percent + "\n" + name2 + " tip: " + value2*percent + "\n" + name3 + " tip: " + value3*percent);
+                }
+            </script>
         </div>
+        <!--
         <br>
         <div class="slidecontainer">
             <input type="range" min="0" max="20" value="10" class="slider" id="myRange">
@@ -46,6 +65,6 @@
             <p> Name 1 : </p>
             <p> Name 2 : </p>
             <p> Name 3 : </p>
-        </div>
+        </div>-->
     </body>
 </html>
