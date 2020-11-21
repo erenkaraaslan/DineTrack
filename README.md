@@ -1,5 +1,5 @@
 # DineTrack
-THIS IS THE DEMO BRANCH
+THIS IS THE PROTOTYPE BRANCH
 
 Development Startup Steps
 
