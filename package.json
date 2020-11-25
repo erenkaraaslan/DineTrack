@@ -27,8 +27,7 @@
     "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-infinite-scroll-component": "5.1.0",
-    "react-slider": "^1.1.2"
+    "react-infinite-scroll-component": "5.1.0"
   },
   "engines": {
     "node": ">=10.0.0"
