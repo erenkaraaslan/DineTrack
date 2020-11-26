@@ -1,43 +1,29 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-let uniqueIndex = 0;
-
-function updateState(percent) {
-  this.setState({
-      tipPercentage: percent,
-      tipToPay: this.state.inputAmount * percent / 100.0,
-  });
-}
-
-function addUnique(index) {
-  this.setState({
-      id: index,
-  });
-  uniqueIndex++;
-}
-
 class Tip extends React.Component {
 
   constructor(props) {
     // Initialize mutable state
     super(props);
     this.state = {
-        id: '',
         name: '',
+        slideValue: '',
         inputAmount: '',
         tipPercentage: '',
         tipToPay: '',
     };
-    updateState = updateState.bind(this);
+
     this.updateName = this.updateName.bind(this);
     this.updateAmount = this.updateAmount.bind(this);
-    //this.handleTip = this.handleTip.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
     this.setState({
       tipPercentage: '20',
+      slideValue: '20',
     });
   }
 
@@ -53,23 +39,36 @@ class Tip extends React.Component {
     });
   }
 
-  /*handleTip(event) {
+  handleClick(event) {
     event.preventDefault();
-    console.log("In handleTip");
+    console.log("Here");
+    console.log(this.state.slideValue);
     this.setState({
-      tipToPay: this.state.inputAmount * this.state.tipPercentage / 100.0,
+      tipPercentage: this.state.slideValue,
+      tipToPay: (this.state.inputAmount * this.state.slideValue / 100.0).toFixed(2),
     });
-  }*/
+    console.log(this.state.tipToPay);
+  }
+
+  handleChange(event) {
+    event.preventDefault();
+    this.setState({
+      slideValue: event.target.value,
+    });
+  }
 
   render() {
     let output;
     if(this.state.tipToPay) {
-      output = <p>{this.state.name} must tip {this.state.tipToPay} at {this.state.tipPercentage} percent</p>;
+      output = <p>{this.state.name} must tip ${this.state.tipToPay} at {this.state.tipPercentage} percent tip.</p>;
     }
     return (
       <div className="tip">
         <input type="text" placeholder="Name" value={this.state.name} onChange={this.updateName}/>
         <input type="text" placeholder="Amount" value={this.state.inputAmount} onChange={this.updateAmount}/>
+        <p>{this.state.slideValue}%</p>
+        <input type="range" min="0" max="100" step="1" value={this.state.slideValue} onChange={this.handleChange}/>
+        <button onClick={this.handleClick}>Calculate Tip!</button>
         {output}
       </div>
     );
@@ -79,17 +78,14 @@ class Tip extends React.Component {
 class TipIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {numTippers: '', slideValue: '', tipList: []};
-    this.handleChange = this.handleChange.bind(this);
+    this.state = {numTippers: '', tipList: []};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleParty = this.handleParty.bind(this);
-    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
     this.setState({
-      slideValue: 20,
-      numTippers: 0,
+      numTippers: '',
     });
   }
 
@@ -100,37 +96,40 @@ class TipIndex extends React.Component {
     });
   }
 
-  handleChange(event) {
+  handleSubmit(event) {
+    console.log("Here");
     event.preventDefault();
+    let tips = [];
+    for(let i = 0; i < this.state.numTippers; ++i) {
+      let iString = i.toString();
+      let tip = {
+        id: iString
+      };
+      let jsonTip = JSON.stringify(tip);
+      console.log(jsonTip);
+      tips.push(jsonTip);
+    }
     this.setState({
-      slideValue: event.target.value,
+      numTippers: '',
+      tipList: tips,
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    console.log(this.state.numTippers);
-  }
-
-  handleClick(event) {
-    event.preventDefault();
-    updateState(this.state.slideValue);
-  }
-
   render() {
-    const tip = <Tip/>;
+    const tipItems = this.state.tipList.map((tip, index) => (
+      <div key={index}>
+        <Tip/>
+        <br/>
+      </div>
+    ));
     return (
       <div>
         <p>How many people will be paying for this meal?</p>
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Party Size" value={this.state.numTippers} onChange={this.handleParty}/>
         </form>
-        {tip}
-        <div>
-          <p>{this.state.slideValue}%</p>
-          <input type="range" min="0" max="100" step="1" value={this.state.slideValue} onChange={this.handleChange}/>
-          <button onClick={this.handleClick}>Calculate Tip!</button>
-        </div>
+        <br/>
+        {tipItems}
       </div>
     );
   }
