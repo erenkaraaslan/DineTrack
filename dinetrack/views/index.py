@@ -43,10 +43,11 @@ def show_meals():
 		username = session['username']
 		db = get_db()
 		cur = db.cursor()
-
+		
 		for c_input in calorie_inputs:
 			query = "INSERT INTO meals(username, date, calories) VALUES ('{}', '{}', '{}')".format(username, date, c_input)
 			cur.execute(query)
+			db.commit()
 		
 	return flask.render_template("meals.html", username=session['username'])
 
