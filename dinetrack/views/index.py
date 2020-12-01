@@ -15,7 +15,7 @@ def show_index():
 		db = get_db()
 		cur = db.cursor()
 		query = "SELECT password FROM users WHERE username = '{}';".format(username)
-		cur = cur.execute(query);
+		cur = cur.execute(query)
 		db_password = cur.fetchall()[0][0]
 		if not db_password:
 			flask.abort(403)
@@ -34,6 +34,21 @@ def show_home():
 @dinetrack.app.route('/about/')
 def show_about():
 	return flask.render_template("about.html", username=session['username'])
+
+@dinetrack.app.route('/meals/', methods=['POST', 'GET'])
+def show_meals():
+	if request.method == 'POST':
+		date = request.form['date']
+		calorie_inputs = request.form.getlist('calorie')
+		username = session['username']
+		db = get_db()
+		cur = db.cursor()
+
+		for c_input in calorie_inputs:
+			query = "INSERT INTO meals(username, date, calories) VALUES ('{}', '{}', '{}')".format(username, date, c_input)
+			cur.execute(query)
+		
+	return flask.render_template("meals.html", username=session['username'])
 
 @dinetrack.app.route('/tip/')
 def show_tip():
