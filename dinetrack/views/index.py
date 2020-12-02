@@ -1,4 +1,4 @@
- 
+
 import os
 import flask
 import dinetrack
@@ -43,21 +43,39 @@ def show_meals():
 		username = session['username']
 		db = get_db()
 		cur = db.cursor()
-		
+
 		for c_input in calorie_inputs:
 			query = "INSERT INTO meals(username, date, calories) VALUES ('{}', '{}', '{}')".format(username, date, c_input)
 			cur.execute(query)
 			db.commit()
-		
+
 	return flask.render_template("meals.html", username=session['username'])
 
 @dinetrack.app.route('/tip/')
 def show_tip():
 	return flask.render_template("tip.html", username=session['username'])
 
-@dinetrack.app.route('/stats/')
+@dinetrack.app.route('/stats/', methods=['POST', 'GET'])
 def show_stats():
-	return flask.render_template("stats.html")
+    context={}
+    if request.method == 'POST':
+        startDate = request.form['start']
+        endDate = request.form['end']
+        print(startDate)
+        print(endDate)
+        username = session['username']
+        db = get_db()
+        cur = db.cursor()
+
+        query = "SELECT calories FROM meals WHERE date BETWEEN '{}' AND '{}'".format(startDate, endDate)
+        cur = cur.execute(query)
+        calorieList = cur.fetchall()
+        total = 0
+        for cal in calorieList:
+            total += cal[0]
+        print(total)
+        context = {"calories":total, "startDate":startDate, "endDate":endDate}
+    return flask.render_template("stats.html", **context)
 
 @dinetrack.app.route('/accounts/create/', methods=['POST', 'GET'])
 def account_create():
