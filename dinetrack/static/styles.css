@@ -1,0 +1,27 @@
+#story {
+    color: rgb(61, 124, 207);
+    text-align: center;
+    padding: 50px;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.login-top {
+    background-color: rgb(61, 124, 207);
+}
+
+.login {
+    background-color: blue;
+    color: blue;
+}
+
+#profiles {
+    padding: 20px;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profile {
+    font-size: medium;
+}

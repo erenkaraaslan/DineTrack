@@ -3,40 +3,44 @@
     <head>
         <title>dinetrack</title>
         <meta charset="UTF-8">
+        <link href="../static/styles.css" rel="stylesheet">
     </head>
 
     <body>
-        <p>Logged in as {{username}}</p>
-        <div>
+        <div class = "login-top">
+            <p>Logged in as {{username}}</p>
             <a href="/accounts/logout/">Logout</a>
         </div>
-        <div id="profiles">
-            <div>
-                <img src="../static/images/eren.png" alt="eren_pic">
-                <p>About the developer section</p>
-            </div>
-            <div>
-                <img src="../static/images/srikant.png" alt="srikant_pic">
-                <p>About the developer section</p>
-            </div>
-            <div>
-                <img src="../static/images/rahul.png" alt="rahul_pic">
-                <p>About the developer section</p>
-            </div>
-            <div>
-                <img src="../static/images/suhaas.png" alt="suhaas_pic">
-                <p>About the developer section</p>
-            </div>
-        </div>
         <div id="story">
-            We face the same dilemma many college students do - figuring out how to split restaurant bills and tips. Far too often
+            <p>We face the same dilemma many college students do - figuring out how to split restaurant bills and tips. Far too often
             we find ourselves wasting too much time doing quick maths in our heads as our waiters awkwardly stare at us after handing us the bill.
             So, we decided to create dinetrack, a tool to settle the issue once and for all.
-            dinetrack.
+            </p>
+            <img src = "../static/images/dinetrack_logo.png" alt="logo">
+        </div>
+        <div id="profiles">
+            <p>About the developers</p>
+        </div>
+        <div class="individual-profile">
+            <img src="../static/images/eren.png" alt="eren_pic">
+            <p>About the developer section</p>
+        </div>
+        <div class="individual-profile">
+            <img src="../static/images/srikant.png" alt="srikant_pic">
+            <p>About the developer section</p>
+        </div>
+        <div class="individual-profile">
+            <img src="../static/images/rahul.png" alt="rahul_pic">
+            <p>About the developer section</p>
+        </div>
+        <div class="individual-profile">
+            <img src="../static/images/suhaas.png" alt="suhaas_pic">
+            <p>About the developer section</p>
+        </div>
         </div>
         <footer>
             <p>EECS 493 Fall 2020 Final Project</p>
-            <p>Created by: Eren Karaaslan, Teamate, Teamate, Teamate</p>
+            <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
         </footer>
     </body>
 </html>
