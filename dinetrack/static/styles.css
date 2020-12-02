@@ -1,5 +1,6 @@
 #story {
-    color: rgb(61, 124, 207);
+    color: white;
+    background-color: rgb(61, 124, 207);
     text-align: center;
     padding: 50px;
     font-weight: bolder;
@@ -7,7 +8,6 @@
 }
 
 .login-top {
-    background-color: rgb(61, 124, 207);
 }
 
 .login {
@@ -22,6 +22,16 @@
     text-align: center;
 }
 
-.profile {
+.individual-profile {
     font-size: medium;
+    text-align: center;
+}
+
+#create-user {
+    text-align: center;
+}
+
+#home {
+    text-align: center;
+    background-color: rgb(61, 124, 207);
 }
