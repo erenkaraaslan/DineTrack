@@ -45,6 +45,7 @@ def show_meals():
 		cur = db.cursor()
 
 		for c_input in calorie_inputs:
+			print(date)
 			query = "INSERT INTO meals(username, date, calories) VALUES ('{}', '{}', '{}')".format(username, date, c_input)
 			cur.execute(query)
 			db.commit()
@@ -57,7 +58,7 @@ def show_tip():
 
 @dinetrack.app.route('/stats/', methods=['POST', 'GET'])
 def show_stats():
-    context={}
+    context={"calories":-1}
     if request.method == 'POST':
         startDate = request.form['start']
         endDate = request.form['end']
@@ -73,7 +74,7 @@ def show_stats():
         total = 0
         for cal in calorieList:
             total += cal[0]
-        print(total)
+		
         context = {"calories":total, "startDate":startDate, "endDate":endDate}
     return flask.render_template("stats.html", **context)
 

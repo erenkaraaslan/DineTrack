@@ -6,15 +6,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </head>
 
-
-
     <body>
-      <script>
-        function showResult() {
-          $('#result').show();
-        }
-      </script>
-
         <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo">
         <div class="inputDate">
             <h2>Select Date Range</h2>
@@ -31,8 +23,12 @@
                   <input type="submit" value="Submit" id="btn">
             </form>
         </div>
-        <div id="result"  style="display: none">
-            <h2>You have consumed {{calories}} calories between {{startDate}} and {{endDate}}</h2>
+        <div>
+          {% if calories == -1 %}
+
+          {% else %}
+            <h2 id = "result">You have consumed {{calories}} calories between {{startDate}} and {{endDate}}</h2>
+          {% endif %}
         </div>
     </body>
 </html>
