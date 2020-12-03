@@ -62,13 +62,11 @@ def show_stats():
     if request.method == 'POST':
         startDate = request.form['start']
         endDate = request.form['end']
-        print(startDate)
-        print(endDate)
         username = session['username']
         db = get_db()
         cur = db.cursor()
 
-        query = "SELECT calories FROM meals WHERE date BETWEEN '{}' AND '{}'".format(startDate, endDate)
+        query = "SELECT calories FROM meals WHERE username = '{}' AND date BETWEEN '{}' AND '{}'".format(username, startDate, endDate)
         cur = cur.execute(query)
         calorieList = cur.fetchall()
         total = 0
