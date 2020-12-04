@@ -1,6 +1,6 @@
 #story {
     color: white;
-    background-color: rgb(61, 124, 207);
+    float: left;
     text-align: center;
     padding: 50px;
     font-weight: bolder;
@@ -8,11 +8,15 @@
 }
 
 .login {
-    background-color: rgb(61, 124, 207);
+    background-color: rgb(98, 158, 236);
     text-align: center;
 }
 
 #profiles {
+    float: left;
+}
+
+#profileheader{
     padding: 20px;
     font-size: larger;
     font-weight: bold;
@@ -21,6 +25,7 @@
 
 .individual-profile {
     font-size: medium;
+    flex-wrap: wrap;
     text-align: center;
 }
 
@@ -31,10 +36,10 @@
 #home {
     text-align: center;
     background-color: rgb(98, 158, 236);
-    padding: 5px;
+    padding-bottom: 5px;
 }
 
-#navelement {
+.navelement {
     color:black;
     font-size: large;
     font-weight: bold;
@@ -42,7 +47,10 @@
     padding: 50px;
 }
 
-#tip-tool {
-    background-color: rgb(61, 124, 207);
+#info{
+    padding-left: 40px;
+}
+
+.form-horizontal {
     text-align: center;
 }

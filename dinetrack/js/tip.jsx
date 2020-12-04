@@ -124,7 +124,6 @@ class TipIndex extends React.Component {
     ));
     return (
       <div>
-        <p>How many people will be paying for this meal?</p>
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Party Size" value={this.state.numTippers} onChange={this.handleParty}/>
         </form>

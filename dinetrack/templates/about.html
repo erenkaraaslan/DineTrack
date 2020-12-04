@@ -3,6 +3,7 @@
     <head>
         <title>dinetrack</title>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../static/styles.css" rel="stylesheet">
     </head>
 
@@ -12,48 +13,53 @@
             <p>Logged in as {{username}}</p>
             <hr color="purple">
             <div id = "navbar">
-                <a id = navelement href="/about/">About us</a>
-                <a id = navelement href="/tip/">Tip Tool</a>
-                <a id = navelement href="/stats/">Statistics</a>
-                <a id = navelement href = "/meals/"> Input Meals </a>
-                <a id = navelement href="/accounts/logout/">Logout</a>
-                <p></p>
+                <a class = navelement href="/about/">About us</a>
+                <a class = navelement href="/tip/">Tip Tool</a>
+                <a class = navelement href="/stats/">Statistics</a>
+                <a class = navelement href = "/meals/"> Input Meals </a>
+                <a class = navelement href="/accounts/logout/">Logout</a>
             </div>
         </div>
-        <div id="profiles">
-            <p>About the developers</p>
+        <div id = "info">
+            <div id="profiles">
+                <h3 id = "profileheader">About the developers</h3>
+                <div class="individual-profile">
+                    <img src="../static/images/eren.png" alt="eren_pic">
+                    <p>About the developer section</p>
+                </div>
+                <div class="individual-profile">
+                    <img src="../static/images/srikant.png" alt="srikant_pic">
+                    <p>Srikant Bhat is a junior at the University of Michigan majoring in computer science 
+                        through the College of Engineering. Srikant found an interest in computer science through personal coding projects during high school.
+                        In his free time, Srikant loves playing basketball, watching all types of sports, and playing video games.
+
+                    </p>
+                </div>
+                <div class="individual-profile">
+                    <img src="../static/images/rahul.png" alt="rahul_pic">
+                    <p>About the developer section</p>
+                </div>
+                <div class="individual-profile">
+                    <img src="../static/images/suhaas.png" alt="suhaas_pic" height="200px", width="auto">
+                    <p>Suhaas Nandyala is a senior at the University of Michigan majoring in computer science through the 
+                        College of Engineering and minoring in Moral Philosophy through LSA. His interest in computer science 
+                        started in high school after taking a couple introductory courses. When not working on assignments, he enjoys coding up 
+                        little programs to make mundane tasks easier and reading through the works of renowned philosophers. 
+                        During his spare time, Suhaas loves watching sports, listening to music, and playing video games with friends.
+                    </p>
+                </div>
+            </div>
+            <div id="story">
+                <p>We face the same dilemma many college students do - figuring out how to split restaurant bills and tips. Far too often
+                we find ourselves wasting too much time doing math in our heads as our waiters awkwardly stare at us after handing us the bill.
+                So, we decided to create Dinetrack, a tool to settle the issue once and for all.
+                </p>
+            </div>
+            <footer>
+                <p>EECS 493 Fall 2020 Final Project</p>
+                <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
+            </footer>
+
         </div>
-        <div class="individual-profile">
-            <img src="../static/images/eren.png" alt="eren_pic">
-            <p>About the developer section</p>
-        </div>
-        <div class="individual-profile">
-            <img src="../static/images/srikant.png" alt="srikant_pic">
-            <p>About the developer section</p>
-        </div>
-        <div class="individual-profile">
-            <img src="../static/images/rahul.png" alt="rahul_pic">
-            <p>About the developer section</p>
-        </div>
-        <div class="individual-profile">
-            <img src="../static/images/suhaas.png" alt="suhaas_pic" height="200px", width="auto">
-            <p>Suhaas Nandyala is a senior at the University of Michigan majoring in computer science through the 
-                College of Engineering and minoring in Moral Philosophy through LSA. His interest in computer science 
-                started in high school after taking a couple introductory courses. When not working on assignments, he enjoys coding up 
-                little programs to make mundane tasks easier and reading through the works of renowned philosophers. 
-                During his spare time, Suhaas loves watching sports, listening to music, and playing video games with friends.
-            </p>
-        </div>
-        </div>
-        <div id="story">
-            <p>We face the same dilemma many college students do - figuring out how to split restaurant bills and tips. Far too often
-            we find ourselves wasting too much time doing quick maths in our heads as our waiters awkwardly stare at us after handing us the bill.
-            So, we decided to create dinetrack, a tool to settle the issue once and for all.
-            </p>
-        </div>
-        <footer>
-            <p>EECS 493 Fall 2020 Final Project</p>
-            <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
-        </footer>
     </body>
 </html>
