@@ -8,38 +8,107 @@
     </head>
 
     <body>
+        <script>
+            function passVisibility(){
+                let image = document.getElementById("visibilityicon")
+                let obj = document.getElementById("pword")
+                let source = image.src.split("/")
+                source = source[source.length - 1]
+                if (source === "hide_password.png"){
+                    image.src = "../static/images/show_password.png"
+                    obj.type = "text"
+                }else{
+                    image.src = "../static/images/hide_password.png"
+                    obj.type = "password"                  
+                }
+            }
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+                document.getElementById("info2").className = "blur"
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+                document.getElementById("info2").className = "noblur"
+            }
+        </script>
         <!-- How to initialize react entry for main.jsx
         <div id="reactEntry">
             Loading ...
         </div>
         <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>-->
-        <div class="login">
-            <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo">
+        <div id = "info2" class = "noblur">
+            <div class="login">
+                <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo">
+            </div>
+            <br>
+            <br>
+            <form class = "form-horizontal" action="" method="post">
+                <h5>Login</h5>
+                <div class = "form-group">
+                    <input type="text" width = "100px" placeholder="Username" name="username">
+                </div>
+                <div class = "form-group" id = "passwordgroup">
+                    <input id = "pword" type="password" placeholder="Password" name="password">
+                    <img id = "visibilityicon" src="../static/images/hide_password.png" onclick="passVisibility()" width="30px"/>
+                </div>
+                
+                <input type="submit" class="btn-primary" value="Login">
+    
+                <br>
+                <br>
+    
+            </form>
+            <div class = "form-horizontal"> 
+                <p>Don't have a DineTrack account? <button onclick = "openForm()" class="btn-secondary">Sign up!</button></p>
+    
+                <br>
+                <br>
+                <footer>
+                    <p>EECS 493 Fall 2020 Final Project</p>
+                    <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
+                </footer>
+            </div>    
+
         </div>
-        <br>
-        <br>
-        <form class = "form-horizontal" action="" method="post">
-            <h5>Login</h5>
-            <div class = "form-group">
-                <input type="text" placeholder="Username" name="username">
+        <div class="form-popup" id="myForm">
+            <form action="/accounts/create/" class="form-horizontal" method="POST">
+                <br>
+                <div id = "signupsection">
+                    <h3>Sign Up! <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo" width="60px"></h3>
+                </div>
+                
+
+                <br>
+                <div>
+                    <input type="text" placeholder="First Name" name="firstname">
+                    <input type="text" placeholder="Last Name" name="lastname">
+                </div>
+                <br>
+                <div>
+                    <input type="text" placeholder="Email" name="email">
+                </div>
+                <br>
+                <div>
+                    <input type="text" placeholder="Username" name="username">
+                </div>
+                <div>
+                    <input type="password" placeholder="Password" name="password">
+                    <br>
+                    <input type="password" placeholder="Confirm Password" name="password_confirm">
+                </div>
+                
+                <br>
+                <input type="file" placeholder="Proflile Picture" name="prof_pic">
+                <br>
+                <br><br><br>
+                <input type="submit" id = "createButton" class="btn-primary" value="Create">
+            </form>
+            <div class="form-horizontal">
+                <br>
+                <button class="btn-cancel" id = "cancelButton" onclick="closeForm()">Close</button>
+
             </div>
-            <div class = "form-group">
-                <input type="text" placeholder="Password" name="password">
-            </div>
-            
-            <input type="submit" class="btn-primary" value="Login">
-
-            <br>
-            <br>
-            <p>Don't have a DineTrack account? <a href="/accounts/create/">Sign up</a></p>
-
-            <br>
-            <br>
-            <footer>
-                <p>EECS 493 Fall 2020 Final Project</p>
-                <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
-            </footer>
-
-        </form>
+        </div>
     </body>
 </html>

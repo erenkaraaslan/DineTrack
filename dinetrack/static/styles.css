@@ -51,6 +51,84 @@
     padding-left: 40px;
 }
 
+#passwordgroup{
+    position: relative;
+    left: 18px;
+}
+
 .form-horizontal {
+    text-align: center;
+}
+
+.form-popup {
+    display: none;
+    border-radius: 25px;
+    position: fixed;
+    top:10%;
+    left:30%;
+    width: 40%;
+    height: 80%;
+    border: 3px solid #f1f1f1;
+    background-color: rgb(98, 158, 236);
+    z-index: 9;
+  }
+
+  #myform{
+      text-align: center;
+  }
+
+  .blur{
+      filter: blur(3px);
+  }
+
+  #createButton{
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+  }
+
+  #cancelButton{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#signupsection{
+    padding-top: 10px;
+    background-color: white;
+}
+
+.profilescolumn{
+    width: 60%;
+    padding-right: 50px;
+}
+
+#profilescolumn2{
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 15px;
+}
+
+.description{
+    text-align: left;
+}
+
+.profileimage{
+    padding-right: 15px;
+}
+
+#storycard{
+    position: relative;
+    right: 5%;
+    background-color: lightgrey;
+    border: 3px solid #f1f1f1;
+    border-radius: 25px;
+}
+
+#storyheader{
+    padding: 20px;
     text-align: center;
 }
