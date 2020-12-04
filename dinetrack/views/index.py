@@ -58,7 +58,7 @@ def show_tip():
 
 @dinetrack.app.route('/stats/', methods=['POST', 'GET'])
 def show_stats():
-    context={"calories":-1}
+    context={"username": session['username'], "calories":-1}
     if request.method == 'POST':
         startDate = request.form['start']
         endDate = request.form['end']
@@ -73,7 +73,7 @@ def show_stats():
         for cal in calorieList:
             total += cal[0]
 		
-        context = {"calories":total, "startDate":startDate, "endDate":endDate}
+        context = {"username": username, "calories":total, "startDate":startDate, "endDate":endDate}
     return flask.render_template("stats.html", **context)
 
 @dinetrack.app.route('/accounts/create/', methods=['POST', 'GET'])

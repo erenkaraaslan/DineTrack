@@ -17,8 +17,19 @@
             });
             });
         </script>
-        <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo">
-        <div class="inputmeals">
+        <div id="home">
+            <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo" width="140">
+            <p>Logged in as {{username}}</p>
+            <hr color="purple">
+            <div id = "navbar">
+                <a id = navelement href="/about/">About us</a>
+                <a id = navelement href="/tip/">Tip Tool</a>
+                <a id = navelement href="/stats/">Statistics</a>
+                <a id = navelement href = "/meals/"> Input Meals </a>
+                <a id = navelement href="/accounts/logout/">Logout</a>
+                <p></p>
+            </div>
+        </div>        <div class="inputmeals">
             <p>Input Past Items</p>
             <form action="/meals/" method="post">
                 <ul style="list-style-type:none;" id = "inputs">

@@ -7,16 +7,18 @@
     </head>
 
     <body>
-        <p>Logged in as {{username}}</p>
         <div id="home">
-            <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo">
+            <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo" width="140">
+            <p>Logged in as {{username}}</p>
             <hr color="purple">
-            <a href="/about/">About us</a>
-            <a href="/tip/">Tip Tool</a>
-            <a href="/stats/">Account Statistics</a>
-            <a href = "/meals/"> Input Meals </a>
-            <p></p>
-            <a href="/accounts/logout/">Logout</a>
+            <div id = "navbar">
+                <a id = navelement href="/about/">About us</a>
+                <a id = navelement href="/tip/">Tip Tool</a>
+                <a id = navelement href="/stats/">Statistics</a>
+                <a id = navelement href = "/meals/"> Input Meals </a>
+                <a id = navelement href="/accounts/logout/">Logout</a>
+                <p></p>
+            </div>
         </div>
         <footer>
             <p>EECS 493 Fall 2020 Final Project</p>

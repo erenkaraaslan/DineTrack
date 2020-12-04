@@ -8,12 +8,24 @@
 
     <body>
         <!-- How to initialize react entry for main.jsx-->
+        <div id="home">
+            <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo" width="140">
+            <p>Logged in as {{username}}</p>
+            <hr color="purple">
+            <div id = "navbar">
+                <a id = navelement href="/about/">About us</a>
+                <a id = navelement href="/tip/">Tip Tool</a>
+                <a id = navelement href="/stats/">Statistics</a>
+                <a id = navelement href = "/meals/"> Input Meals </a>
+                <a id = navelement href="/accounts/logout/">Logout</a>
+                <p></p>
+            </div>
+        </div>
         <div id="reactEntry">
             Loading ...
         </div>
         <div id="tip-tool">
             <script type="text/javascript" src="{{ url_for('static', filename='js/bundle.js') }}"></script>
-            <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo">
         </div>
         <!--<p>Logged in as {{username}}</p>
         <div>
