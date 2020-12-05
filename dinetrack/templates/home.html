@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../static/styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -39,7 +41,7 @@
             {% for restaurant in restaurants %}
             <div class="border border-dark" id="restaurant">
                 <p><b>{{restaurant.name}}</b></p>
-                <span>Status: 
+                <span>Status:
                     {% if 'opening_hours' in restaurant %}
                         {% if 'open_now' in restaurant.opening_hours %}
                             {% if restaurant.opening_hours.open_now %}
@@ -54,9 +56,9 @@
                         Unknown
                     {% endif %}
                     ||
-                    Rating: {{restaurant.rating}} 
-                    || 
-                    Price Level: 
+                    Rating: {{restaurant.rating}}
+                    ||
+                    Price Level:
                     {% if restaurant.price_level == 1 %}
                         <span style="color: green">$</span>
                     {% elif restaurant.price_level == 2 %}
@@ -71,7 +73,7 @@
             {% endfor %}
             <br>
             <br>
-            <footer class="none">
+            <footer class="pageFooter">
                 <p>EECS 493 Fall 2020 Final Project</p>
                 <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
             </footer>

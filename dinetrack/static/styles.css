@@ -7,9 +7,29 @@
     font-size: x-large;
 }
 
+body {
+   min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
+}
+
 .login {
     background-color: rgb(98, 158, 236);
     text-align: center;
+}
+
+.pageFooter {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: rgb(98, 158, 236);
+    left : 0px;
+    text-align: center;
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
 }
 
 #profiles {
@@ -18,15 +38,18 @@
 
 #profileheader{
     padding: 20px;
-    font-size: larger;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
+    font-family: 'Playfair Display', serif;
 }
 
 .individual-profile {
     font-size: medium;
     flex-wrap: wrap;
     text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
 }
 
 #create-user {
@@ -36,14 +59,17 @@
 #home {
     text-align: center;
     background-color: rgb(98, 158, 236);
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    font-family: 'Playfair Display', serif;
 }
 
 .navelement {
     color:black;
     font-size: large;
     font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
     padding: 50px;
 }
 
@@ -110,6 +136,7 @@
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     padding: 15px;
+    text-align: center;
 }
 
 .description{
@@ -126,11 +153,13 @@
     background-color: lightgrey;
     border: 3px solid #f1f1f1;
     border-radius: 25px;
+    font-family: 'Playfair Display', serif;
 }
 
 #storyheader{
     padding: 20px;
     text-align: center;
+    font-family: 'Playfair Display', serif;
 }
 
 .restaurants{
@@ -141,16 +170,11 @@
 #restaurant{
 }
 
-.page-footer{
-    position: fixed;
-    bottom: 0px;
-}
-
 #factcard{
-    border:1px solid black; 
-    left: 0px; 
-    background-color: lightblue; 
-    width:70%;
+    border:1px solid black;
+    left: 0px;
+    background-color: lightblue;
+    width:80%;
 }
 
 .container{
@@ -158,8 +182,21 @@
     width: 500px;
 }
 
+.pageInput {
+  border-radius:10px;
+  height:40px;
+  font-size:14pt;
+}
+
+.btn-primary {
+  border-radius:10px;
+  height:40px;
+  font-size:14pt;
+}
+
 .top-of-home{
     text-align: center;
-    color: rgb(98, 158, 236);
+    color: rgb(65,105,225);
     padding: 75px;
+    font-size: 25px;
 }

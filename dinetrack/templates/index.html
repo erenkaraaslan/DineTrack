@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../static/styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -19,7 +21,7 @@
                     obj.type = "text"
                 }else{
                     image.src = "../static/images/hide_password.png"
-                    obj.type = "password"                  
+                    obj.type = "password"
                 }
             }
             function openForm() {
@@ -52,19 +54,19 @@
                     <input id = "pword" type="password" placeholder="Password" name="password">
                     <img id = "visibilityicon" src="../static/images/hide_password.png" onclick="passVisibility()" width="30px"/>
                 </div>
-                
+
                 <input type="submit" class="btn-primary" value="Login">
-    
+
                 <br>
                 <br>
-    
+
             </form>
-            <div class = "form-horizontal"> 
+            <div class = "form-horizontal">
                 <p>Don't have a DineTrack account? <button onclick = "openForm()" class="btn-secondary">Sign up!</button></p>
-    
+
                 <br>
                 <br>
-            </div>    
+            </div>
 
         </div>
         <div class="form-popup" id="myForm">
@@ -73,7 +75,7 @@
                 <div id = "signupsection">
                     <h3>Sign Up! <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo" width="60px"></h3>
                 </div>
-                
+
 
                 <br>
                 <div>
@@ -93,7 +95,7 @@
                     <br>
                     <input type="password" placeholder="Confirm Password" name="password_confirm">
                 </div>
-                
+
                 <br>
                 <input type="file" placeholder="Proflile Picture" name="prof_pic">
                 <br>
@@ -106,7 +108,7 @@
 
             </div>
         </div>
-        <footer class="page-footer">
+        <footer class="pageFooter">
             <p>EECS 493 Fall 2020 Final Project</p>
             <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
         </footer>

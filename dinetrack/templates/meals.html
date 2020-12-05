@@ -6,6 +6,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="../static/styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -32,30 +34,30 @@
             </div>
         </div>
         <div id = "info">
-            <div class="inputmeals">
+            <div>
                 <br>
-                <h4>Input Meal</h4>
+                <h1>Input Meal</h1>
                 <form action="/meals/" method="post">
                     <ul style="list-style-type:none; padding-left: 0px;" id = "inputs">
                         <li>
-                            <input type="date" placeholder="Date" name="date" style=”border-radius:25px”>
+                            <input type="date" placeholder="Date" name="date" class="pageInput">
                         </li>
                         <br>
                         <li>
-                            <input type="text" placeholder="Item" name="item" style=”border-radius:25px”>
+                            <input type="text" placeholder="Item" name="item" class="pageInput">
                         </li>
                         <li>
-                            <input type="text" placeholder="Calories" name="calorie" style=”border-radius:25px”>
+                            <input type="text" placeholder="Calories" name="calorie" class="pageInput">
                         </li>
                     </ul>
-                    <input type="submit" class = "btn-primary" value="Submit">
+                    <input type="submit" class="btn-primary" value="Submit">
                 </form>
                 <br>
                 <button id="addMore">Add more</button>
             </div>
             <br>
             <br>
-            <footer>
+            <footer class="pageFooter">
                 <p>EECS 493 Fall 2020 Final Project</p>
                 <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
             </footer>
