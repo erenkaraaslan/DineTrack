@@ -22,10 +22,15 @@
                 <p></p>
             </div>
         </div>
-        <div>
+        <div class="top-of-home">
+            <p><b>As this tool originated at the University of Michigan, it's
+                only right we support our local restaurants amidst the pandemic.
+                Below you can find a list of nearby restaurants near UM with real time
+                data about hours, ratings, and prices.</b>
+            </p>
             <p>Not from Ann Arbor? Support local restaurants near you!</p>
             <form class = "form-horizontal" action="" method="post">
-                <input type="text" placeholder="Enter Location" name="location">
+                <input type="text" placeholder="Enter Your Location" name="location">
                 <input type="submit" value="Search">
             </form>
         </div>
@@ -38,9 +43,9 @@
                     {% if 'opening_hours' in restaurant %}
                         {% if 'open_now' in restaurant.opening_hours %}
                             {% if restaurant.opening_hours.open_now %}
-                                Open
+                                <span style="color: green">Open</span>
                             {% elif not restaurant.opening_hours.open_now %}
-                                Closed
+                                <span style="color: red">Closed</span>
                             {% endif %}
                         {% else %}
                             Unknown
@@ -53,13 +58,13 @@
                     || 
                     Price Level: 
                     {% if restaurant.price_level == 1 %}
-                        $
+                        <span style="color: green">$</span>
                     {% elif restaurant.price_level == 2 %}
-                        $$
+                        <span style="color: orange">$$</span>
                     {% elif restaurant.price_level == 3 %}
-                        $$$
+                        <span style="color: orange">$$$</span>
                     {% else %}
-                        $$$$
+                        <span style="color: red">$$$$</span>
                     {% endif %}
                 </span>
             </div>

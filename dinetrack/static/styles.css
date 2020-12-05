@@ -138,8 +138,7 @@
     text-align: center;
 }
 
-.restaurant{
-    text-align: center;
+#restaurant{
 }
 
 .page-footer{
@@ -152,4 +151,15 @@
     left: 0px; 
     background-color: lightblue; 
     width:70%;
+}
+
+.container{
+    text-align: center;
+    width: 500px;
+}
+
+.top-of-home{
+    text-align: center;
+    color: rgb(98, 158, 236);
+    padding: 75px;
 }

@@ -31,9 +31,9 @@
                     {% if 'opening_hours' in restaurant %}
                         {% if 'open_now' in restaurant.opening_hours %}
                             {% if restaurant.opening_hours.open_now %}
-                                Open
+                                <span style="color: green">Open</span>
                             {% elif not restaurant.opening_hours.open_now %}
-                                Closed
+                                <span style="color: red">Closed</span>
                             {% endif %}
                         {% else %}
                             Unknown
@@ -46,13 +46,13 @@
                     || 
                     Price Level: 
                     {% if restaurant.price_level == 1 %}
-                        $
+                        <span style="color: green">$</span>
                     {% elif restaurant.price_level == 2 %}
-                        $$
+                        <span style="color: orange">$$</span>
                     {% elif restaurant.price_level == 3 %}
-                        $$$
+                        <span style="color: orange">$$$</span>
                     {% else %}
-                        $$$$
+                        <span style="color: red">$$$$</span>
                     {% endif %}
                 </span>
             </div>
