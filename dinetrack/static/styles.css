@@ -131,7 +131,7 @@ body {
       padding-bottom: 5px;
   }
 
-  #cancelButton{
+#cancelButton{
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 5px;
@@ -182,9 +182,6 @@ body {
 .restaurants{
     color:  rgb(98, 158, 236);
     text-align: center;
-}
-
-#restaurant{
 }
 
 #factcard{
