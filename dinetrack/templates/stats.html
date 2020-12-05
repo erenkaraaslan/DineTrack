@@ -30,7 +30,7 @@
                     From:
                     <input type="date" name="start"
                     value="2020-01-01">
-  
+
                     To:
                     <input type="date" name="end"
                     value="2020-01-01">
@@ -41,10 +41,20 @@
           </div>
           <div>
             {% if calories == -1 %}
-  
+
             {% else %}
               <br>
-              <h2 id = "result">You have consumed {{calories}} calories between {{startDate}} and {{endDate}}</h2>
+              <h3 id = "result">You have consumed {{calories}} calories between {{startDate}} and {{endDate}}.</h3>
+              <h3>{{message}}</h3>
+              <br />
+
+              <div id = "factcard" style="border:1px solid black; left: 0px; background-color: lightblue; width:80%;">
+                  <h1 id = "storyheader"> Fun Nutritional Fact! </h1>
+                  <div id = "profilescolumn2" style="text-align:center;">
+                    <h3>{{funFact}}</h3>
+                  </div>
+
+              </div>
             {% endif %}
           </div>
         </div>

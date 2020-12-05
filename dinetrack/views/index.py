@@ -5,6 +5,8 @@ import dinetrack
 from dinetrack.database import get_db, close_connection
 from flask import session
 from flask import request
+import datetime
+import random
 APP = flask.Flask(__name__)
 
 @dinetrack.app.route('/', methods=['POST', 'GET'])
@@ -72,8 +74,27 @@ def show_stats():
         total = 0
         for cal in calorieList:
             total += cal[0]
-		
-        context = {"username": username, "calories":total, "startDate":startDate, "endDate":endDate}
+        finalStartDate = datetime.datetime.strptime(startDate,'%Y-%m-%d').strftime('%B %d, %Y')
+        finalEndDate = datetime.datetime.strptime(endDate,'%Y-%m-%d').strftime('%B %d, %Y')
+
+        funFacts = ["Canadians spend about 60 minutes a day on eating, while the French spend about 133 minutes a day.",
+        "Milk is the #1 source of riboflavin in the Canadian diet. Riboflavin keeps skin, eyes and nerves healthy and releases energy in cells.",
+        "Fluid needs vary depending on your age and gender. Teens and adults need anywhere between 8 and 13 cups of fluid each day. Water is great, but milk, juice, soup and anything else you drink also count as fluid.",
+        "Broccoli is a source of calcium. You can get 50 mg of calcium from a 3/4 cup (175 mL) portion. Adults aged 19–50 need 1000 mg of calcium every day.",
+        "Eggs contain the highest quality food protein known. All parts of an egg are edible, including the shell which has a high calcium content.",
+        "The mushroom is the only non-animal natural source of vitamin D.",
+        "The world has more than 50,000 edible plants, yet just three commodity crops such as rice, maize, and wheat, provide 60% of the plant-derived calories we eat.",
+        "Broccoli, parsley, brussel sprouts, and red bell peppers all contain more vitamin C per 100g serving than oranges. Chili peppers contain 400% more.",
+        "There is a fruit by the name of Black Sapote or 'chocolate pudding fruit' which tastes like chocolate pudding and is actually low in fat and has about 4 times as much vitamin C as an orange.",
+        "Potatoes have a bad reputation, but are actually highly beneficial to your health. They are packed with Vitamin C, Potassium, Fiber, Vitamin B6 and kukoamines which help aid in lowering blood pressure."
+        ]
+        fact = random.choice(funFacts)
+        message = ""
+        if (total == 0):
+            message = "Are you sure you have been recording your meals?"
+        else:
+            message = "Nice! Keep recording your calories to consistently track your progress."
+        context = {"username": username, "calories":total, "startDate":finalStartDate, "endDate":finalEndDate, "funFact":fact, "message":message}
     return flask.render_template("stats.html", **context)
 
 @dinetrack.app.route('/accounts/create/', methods=['POST', 'GET'])
