@@ -5,7 +5,7 @@ import dinetrack
 from dinetrack.database import get_db, close_connection
 from flask import session
 from flask import request
-import googlemaps
+#import googlemaps
 import urllib.request
 import json
 import datetime
