@@ -106,7 +106,7 @@ def show_stats():
         total = 0
         for cal in calorieList:
             total += cal[0]
-            
+
         context = {"username": username, "calories":total, "startDate":startDate, "endDate":endDate}
         finalStartDate = datetime.datetime.strptime(startDate,'%Y-%m-%d').strftime('%B %d, %Y')
         finalEndDate = datetime.datetime.strptime(endDate,'%Y-%m-%d').strftime('%B %d, %Y')
@@ -120,7 +120,13 @@ def show_stats():
         "The world has more than 50,000 edible plants, yet just three commodity crops such as rice, maize, and wheat, provide 60% of the plant-derived calories we eat.",
         "Broccoli, parsley, brussel sprouts, and red bell peppers all contain more vitamin C per 100g serving than oranges. Chili peppers contain 400% more.",
         "There is a fruit by the name of Black Sapote or 'chocolate pudding fruit' which tastes like chocolate pudding and is actually low in fat and has about 4 times as much vitamin C as an orange.",
-        "Potatoes have a bad reputation, but are actually highly beneficial to your health. They are packed with Vitamin C, Potassium, Fiber, Vitamin B6 and kukoamines which help aid in lowering blood pressure."
+        "Potatoes have a bad reputation, but are actually highly beneficial to your health. They are packed with Vitamin C, Potassium, Fiber, Vitamin B6 and kukoamines which help aid in lowering blood pressure.",
+        "Too much of a spice can be a bad thing, and nutmeg is no exception. If you have two or more teaspoons of the spice, it can actually cause hallucinations!",
+        "Next time you're feeling dehydrated and don't feel like drinking water, try snacking on a cucumber; it's 96 percent water.",
+        "Peanuts are actually an ingredient in dynamite. They have oil in them called glycerol that's used to create nitroglycerin, a key ingredient in dynamite.",
+        "The stickers that are placed on our favourite fruit are actually fine to eat. Now you don’t have to freak out when you accidentally take a chomp of one!",
+        "The most stolen food in the world is in fact cheese. Around 4% of ALL the cheese made in the world gets stolen. There's even a black market of stolen cheeses, but we didn't tell you that.",
+        "The oily fibrous materials used to transport pistachio nuts can cause them to break out in flames! Exercise caution whenever you pass a big mound of pistachio nuts."
         ]
         fact = random.choice(funFacts)
         message = ""

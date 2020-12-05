@@ -5,6 +5,8 @@
       <meta charset="UTF-8">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link href="../static/styles.css" rel="stylesheet" type="text/css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </head>
 
@@ -25,15 +27,16 @@
         <div id = "info">
           <div class="inputDate">
             <br>
-              <h4>Select Date Range</h4>
+              <h1>Select Date Range</h1>
+              <br />
               <form action="/stats/" method="post" id="calorieForm">
                     From:
                     <input type="date" name="start"
-                    value="2020-01-01">
+                    value="2020-01-01" class="pageInput">
 
                     To:
                     <input type="date" name="end"
-                    value="2020-01-01">
+                    value="2020-01-01" class="pageInput">
                     <br />
                     <br />
                     <input type="submit" class = "btn-primary" value="Submit" id="btn">
@@ -49,7 +52,7 @@
               <br />
 
               <div id = "factcard">
-                  <h3 id = "storyheader"> Fun Nutritional Fact! </h3>
+                  <h3 id = "storyheader"> Fun Food Fact! </h3>
                   <div id = "profilescolumn2" style="text-align:center;">
                     <h5>{{funFact}}</h5>
                   </div>
