@@ -126,7 +126,17 @@ def show_stats():
         "Peanuts are actually an ingredient in dynamite. They have oil in them called glycerol that's used to create nitroglycerin, a key ingredient in dynamite.",
         "The stickers that are placed on our favourite fruit are actually fine to eat. Now you don’t have to freak out when you accidentally take a chomp of one!",
         "The most stolen food in the world is in fact cheese. Around 4% of ALL the cheese made in the world gets stolen. There's even a black market of stolen cheeses, but we didn't tell you that.",
-        "The oily fibrous materials used to transport pistachio nuts can cause them to break out in flames! Exercise caution whenever you pass a big mound of pistachio nuts."
+        "The oily fibrous materials used to transport pistachio nuts can cause them to break out in flames! Exercise caution whenever you pass a big mound of pistachio nuts.",
+        "There was a lawsuit that took place trying to prove that Pringles are not really potato chips.",
+        "Arachibutyrophobia is the fear of getting peanut butter stuck to the top of your mouth. (Yes, this is a real fear.)",
+        "It may not taste as good as Yoplait or frozen yogurt, BUT greek yogurt has DOUBLE the amount of protein in it than all those other leading brands. So, walk past the Go-Gurts and grab the Chobani (it's worth it).",
+        "Honey is the only food that has an eternal shelf life. It will never rot or go bad as long as you live.",
+        "Canned peaches were the first ever fruit to be consumed on the moon.",
+        "Back in 1928, machine-sliced bread was first introduced, changing the world as we knew it. But only 15 years later, in 1943, it was banned by the FDA for using too much plastic that could be used for the war effort instead. The ban only lasted three months, though, as the public outcry it caused was too great.",
+        "The most expensive pizza in the world costs $12,000. That’s because it takes 72 hours to make, and it can only be made in your home by 3 Italian chefs. The pizza is topped with 3 types of caviar, bufala mozzarella, lobster from Norway and Cilento, and pink Australian sea salt.",
+        "Back in the early 1800’s, people thought tomatoes had medicinal qualities. One doctor claimed they could treat diarrhea and indigestion, so he made a recipe for a type of tomato ketchup which then became a pill.",
+        "White chocolate isn’t chocolate. Its name is deceiving, because white chocolate doesn’t have any components of regular chocolate. It’s really just a mixture of sugar, milk, vanilla, lecithin, and cocoa butter.",
+        "In Russia, until 2013, beer and other alcohol under 10% ABV was classified as a soft drink! Until then, and even still today, it was common for people to drink beer in the streets and parks as commonly as you would see soda."
         ]
         fact = random.choice(funFacts)
         message = ""
