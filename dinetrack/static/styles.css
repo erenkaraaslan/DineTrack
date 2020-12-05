@@ -7,6 +7,23 @@
     font-size: x-large;
 }
 
+#inputs {
+  list-style-type:none;
+  padding-left: 0px;
+}
+
+.greenPrice {
+  color: green;
+}
+
+.orangePrice {
+  color: orange;
+}
+
+.redPrice {
+  color: red;
+}
+
 body {
    min-height: 400px;
    margin-bottom: 100px;
