@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>dinetrack</title>
-        <meta charset="UTF-8">
-        <link href="../static/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <title>dinetrack</title>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="../static/styles.css" rel="stylesheet" type="text/css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     </head>
 
     <body>
-
         <div id="home">
             <img src="../static/images/dinetrack_logo.png" alt="dinetrack_logo" width="140">
             <p>Logged in as {{username}}</p>
@@ -27,7 +26,7 @@
           <div class="inputDate">
             <br>
               <h4>Select Date Range</h4>
-              <form action="/stats/" method="post" onsubmit="showResult()" id="calorieForm">
+              <form action="/stats/" method="post" id="calorieForm">
                     From:
                     <input type="date" name="start"
                     value="2020-01-01">
@@ -58,10 +57,10 @@
               </div>
             {% endif %}
           </div>
-          <br>          
           <br>
           <br>
-          <footer>
+          <br>
+          <footer class="pageFooter">
               <p>EECS 493 Fall 2020 Final Project</p>
               <p>Created by: Eren Karaaslan, Srikant Bhat, Rahul D'Costa, and Suhaas Nandyala</p>
           </footer>
