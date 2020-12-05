@@ -69,6 +69,7 @@ class Tip extends React.Component {
         <p>{this.state.slideValue}%</p>
         <input type="range" min="0" max="100" step="1" value={this.state.slideValue} onChange={this.handleChange}/>
         <button onClick={this.handleClick}>Calculate Tip!</button>
+        <br></br>
         {output}
       </div>
     );
@@ -126,6 +127,7 @@ class TipIndex extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Party Size" value={this.state.numTippers} onChange={this.handleParty}/>
+          <button onClick={this.handleSubmit}>Submit</button>
         </form>
         <br/>
         {tipItems}

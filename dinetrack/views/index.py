@@ -34,6 +34,8 @@ def show_index():
 
 @dinetrack.app.route('/home/', methods=['POST', 'GET'])
 def show_home():
+    if not 'username' in session:
+            flask.abort(403)
     context = {}
     if request.method == 'POST':
         location = request.form['location']
@@ -67,7 +69,11 @@ def show_home():
 
 @dinetrack.app.route('/about/')
 def show_about():
-    return flask.render_template("about.html", username=session['username'])
+    if 'username' in session:
+        username = session['username']
+    else:
+        username = "N/A"
+    return flask.render_template("about.html", username=username)
 
 @dinetrack.app.route('/meals/', methods=['POST', 'GET'])
 def show_meals():
@@ -77,7 +83,6 @@ def show_meals():
         username = session['username']
         db = get_db()
         cur = db.cursor()
-
         for c_input in calorie_inputs:
             print(date)
             query = "INSERT INTO meals(username, date, calories) VALUES ('{}', '{}', '{}')".format(username, date, c_input)
@@ -88,10 +93,16 @@ def show_meals():
 
 @dinetrack.app.route('/tip/')
 def show_tip():
-    return flask.render_template("tip.html", username=session['username'])
+    if 'username' in session:
+        username = session['username']
+    else:
+        username = "N/A"
+    return flask.render_template("tip.html", username=username)
 
 @dinetrack.app.route('/stats/', methods=['POST', 'GET'])
 def show_stats():
+    if not 'username' in session:
+        flask.abort(403)
     context={"username": session['username'], "calories":-1}
     if request.method == 'POST':
         startDate = request.form['start']
