@@ -44,7 +44,7 @@
     font-size: large;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 50px;
+    padding: 10px;
 }
 
 #info{
@@ -130,5 +130,14 @@
 
 #storyheader{
     padding: 20px;
+    text-align: center;
+}
+
+.restaurants{
+    color:  rgb(98, 158, 236);
+    text-align: center;
+}
+
+.restaurant{
     text-align: center;
 }
