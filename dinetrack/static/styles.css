@@ -7,6 +7,23 @@
     font-size: x-large;
 }
 
+#inputs {
+  list-style-type:none;
+  padding-left: 0px;
+}
+
+.greenPrice {
+  color: green;
+}
+
+.orangePrice {
+  color: orange;
+}
+
+.redPrice {
+  color: red;
+}
+
 body {
    min-height: 400px;
    margin-bottom: 100px;
@@ -114,7 +131,7 @@ body {
       padding-bottom: 5px;
   }
 
-  #cancelButton{
+#cancelButton{
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 5px;
@@ -165,9 +182,6 @@ body {
 .restaurants{
     color:  rgb(98, 158, 236);
     text-align: center;
-}
-
-#restaurant{
 }
 
 #factcard{
