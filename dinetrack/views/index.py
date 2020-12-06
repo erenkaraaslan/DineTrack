@@ -77,6 +77,8 @@ def show_about():
 
 @dinetrack.app.route('/meals/', methods=['POST', 'GET'])
 def show_meals():
+    if not 'username' in session:
+        flask.abort(403)
     if request.method == 'POST':
         date = request.form['date']
         calorie_inputs = request.form.getlist('calorie')
